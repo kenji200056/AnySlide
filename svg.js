@@ -105,51 +105,69 @@ fs.readFile(svgFilePath, 'utf8', (err, data) => {
             if (name === "text") {
                 let textRuns = [];
                 let totalText = ""; // すべてのテキストを統合
-
-
+            
                 children.forEach(child => {
                     if (child.name === "tspan") {
                         let tspanColor = convertColor(child.attributes.fill || textColor);
                         let tspanText = child.children.map(c => c.value || "").join("").trim();
                         let isBold = child.attributes["font-weight"] === "bold"; // 太字判定
-
-                        totalText += tspanText;
+            
+                        totalText += tspanText; // 文字数を合計
                         if (tspanText) {
                             textRuns.push({
                                 text: tspanText,
-                                options: { color: tspanColor, bold: isBold }
+                                options: {
+                                    color: tspanColor,
+                                    bold: isBold // 太字を適用
+                                }
                             });
                         }
                     } else {
                         let normalText = child.value || "";
-                        let isBold = attributes["font-weight"] === "bold";
-
-                        totalText += normalText;
+                        let isBold = attributes["font-weight"] === "bold"; // `text` 自体が太字か判定
+            
+                        totalText += normalText; // 文字数を合計
                         if (normalText.trim()) {
                             textRuns.push({
                                 text: normalText,
-                                options: { color: textColor, bold: isBold }
+                                options: {
+                                    color: textColor,
+                                    bold: isBold // 太字を適用
+                                }
                             });
                         }
                     }
                 });
-
+            
                 if (textRuns.length > 0) {
                     let fontSizePx = fontSize;
-                    let fontSizePt = fontSizePx * 0.75; // px → pt変換
+                    let fontSizePt = fontSizePx * 0.75 / 1.5; // px → pt変換 ＋ スケールの影響を調整
+            
+                    const ptToCm = 0.0352778; // 1 pt = 0.0352778 cm
+                    let textBoxHeight = fontSizePt * ptToCm; // 高さを調整
+                    let textBoxWidth = fontSizePt * totalText.length * ptToCm * 0.7; // 幅を `totalText.length` に基づいて設定
+            
+                    // **🔹 直前の `rect` を取得し、その範囲に収める **
+                    let lastRect = null;
+                    for (let i = rects.length - 1; i >= 0; i--) {
+                        if (y >= rects[i].y && y <= rects[i].y + rects[i].h) {
+                            lastRect = rects[i];
+                            break;
+                        }
+                    }
+            
+                    if (lastRect) {
+                        let rectStartX = lastRect.x;
+                        let rectEndX = lastRect.x + lastRect.w;
+                        let textEndX = x + textBoxWidth;
+            
+                        if (textEndX > rectEndX) {
+                            textBoxWidth = rectEndX - x; // `text` が `rect` を超えないように調整
+                        }
+                    }
 
-                    let textBoxHeight = fontSizePt * 0.0352778; // pt → cm
-                    let textBoxWidth = fontSizePt * totalText.length * 0.7 * 0.0352778; // 文字数に基づく幅
-
-                    // **修正: `text` の `x, y` のスケール調整**
-                    let textX = (parseFloat(attributes.x || 0) - vbX + parentTransform.x) * scaleX;
-                    let textY = (parseFloat(attributes.y || 0) - vbY + parentTransform.y) * scaleY;
-
-                    // **修正: ベースライン補正**
-                    textY -= textBoxHeight * 0.35; // ベースライン基準を PowerPoint 仕様に補正
-
-                    // **修正: text-anchor の影響を考慮したX座標調整**
-                    let textAlign = "left";
+                    // **🔹 `text-anchor` の影響を考慮したX座標調整**
+                    let textAlign = "left"; // デフォルトは左揃え
                     let xOffset = 0;
 
                     if (attributes["text-anchor"] === "middle") {
@@ -160,23 +178,22 @@ fs.readFile(svgFilePath, 'utf8', (err, data) => {
                         xOffset = -textBoxWidth;
                     }
 
-                    let correctedX = textX + xOffset;
-                    let correctedY = textY;
+                    let correctedX = (x + xOffset);
+                    let correctedY = y - (textBoxHeight / 2);
 
-                    // **修正: PowerPointの `align` を適用**
+                    // **🔹 PowerPointの `align` オプションも適用**
                     slide.addText(textRuns, {
                         x: correctedX,
                         y: correctedY,
-                        fontSize: fontSizePt,
-                        w: textBoxWidth,
-                        h: textBoxHeight,
-                        autoFit: true,
-                        align: textAlign
+                        fontSize: fontSizePt, // 適切にスケールされたフォントサイズ
+                        w: textBoxWidth, // cm単位の幅
+                        h: textBoxHeight,  // cm単位の高さ
+                        autoFit: true, // 自動調整を有効にする
+                        align: textAlign // `left` / `center` / `right` を適用
                     });
                 }
-            }
+            } 
 
-            
             // **🔹 circle の処理**
             else if (name === "circle") {
                 let cx = parseFloat(attributes.cx || 0) - vbX;
@@ -190,8 +207,8 @@ fs.readFile(svgFilePath, 'utf8', (err, data) => {
                     h: r * 2 * scale,
                     fill: { color: fill, transparency: 100 - opacity * 100 }
                 });
-            }
-
+            } 
+            
             // **🔹 polygon の処理**
             else if (name === "polygon") {
                 let points = attributes.points.split(" ").map(p => {
@@ -218,7 +235,6 @@ fs.readFile(svgFilePath, 'utf8', (err, data) => {
 
         svgJson.children.forEach(element => processElement(element));
 
-        
         pptx.writeFile({ fileName: "presentation.pptx" }).then(() => {
             console.log("PPTXファイルが作成されました");
         });
