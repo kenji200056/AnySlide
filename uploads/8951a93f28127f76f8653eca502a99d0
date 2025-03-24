@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" style="font-family: 'Arial', sans-serif;">
+  <!-- 背景 -->
+  <rect width="1600" height="900" fill="#f8fafc" />
+  
+  <!-- ヘッダー -->
+  <g>
+    <!-- タイトルバー -->
+    <rect x="50" y="50" width="1500" height="100" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+    
+    <!-- タイトル -->
+    <text x="80" y="95" font-size="32px" font-weight="bold" fill="url(#blue-gradient)">エンタメ企業におけるCOEモデル成功事例分析</text>
+    <text x="80" y="125" font-size="16px" fill="#475569">日本・米国企業の取り組みから見る組織能力構築の戦略的アプローチ</text>
+    
+    <!-- 日付 -->
+    <text x="1470" y="125" font-size="14px" fill="#475569" text-anchor="end">2025年2月27日</text>
+  </g>
+  
+  <!-- 左側エリア (60%) -->
+  <g>
+    <!-- エグゼクティブサマリー -->
+    <rect x="50" y="180" width="900" height="250" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+    <text x="80" y="220" font-size="18px" font-weight="bold" fill="#1e40af">🔍 エグゼクティブサマリー</text>
+    <line x1="80" y1="230" x2="920" y2="230" stroke="#e2e8f0" stroke-width="2" />
+    
+    <!-- エグゼクティブサマリーの内容 -->
+    <circle cx="100" cy="260" r="5" fill="#2563EB" />
+    <text x="120" y="265" font-size="14px" fill="#334155">COEは<tspan fill="#2563EB">特定領域の専門知識やベストプラクティスを集約・展開する中枢組織</tspan>として機能</text>
+    
+    <circle cx="100" cy="290" r="5" fill="#2563EB" />
+    <text x="120" y="295" font-size="14px" fill="#334155">エンタメ企業では<tspan fill="#2563EB">コンテンツ開発の不確実性低減</tspan>と<tspan fill="#2563EB">組織のサイロ化防止</tspan>に貢献</text>
+    
+    <circle cx="100" cy="320" r="5" fill="#2563EB" />
+    <text x="120" y="325" font-size="14px" fill="#334155">Netflix、ディズニー、ソニー、任天堂の成功事例から<tspan fill="#2563EB">データ活用・顧客体験向上・組織統合</tspan>が鍵</text>
+    
+    <circle cx="100" cy="350" r="5" fill="#2563EB" />
+    <text x="120" y="355" font-size="14px" fill="#334155">デジタル技術（AI・クラウド）の浸透により、COEの戦略的重要性が一層増大</text>
+    
+    <circle cx="100" cy="380" r="5" fill="#2563EB" />
+    <text x="120" y="385" font-size="14px" fill="#334155">今後は<tspan fill="#2563EB">クリエイティブ領域への拡大</tspan>と<tspan fill="#2563EB">外部連携の強化</tspan>がCOE進化の方向性</text>
+    
+    <!-- KPI 指標エリア -->
+    <rect x="80" y="410" width="260" height="95" rx="10" ry="10" fill="#2563EB" opacity="0.1" />
+    <text x="100" y="440" font-size="24px" font-weight="bold" fill="#2563EB">10億ドル+</text>
+    <text x="100" y="465" font-size="14px" fill="#334155">Netflix推奨エンジンによる</text>
+    <text x="100" y="485" font-size="14px" fill="#334155">年間コスト削減効果</text>
+    
+    <rect x="360" y="410" width="260" height="95" rx="10" ry="10" fill="#2563EB" opacity="0.1" />
+    <text x="380" y="440" font-size="24px" font-weight="bold" fill="#2563EB">58%</text>
+    <text x="380" y="465" font-size="14px" fill="#334155">ソニーミュージックの</text>
+    <text x="380" y="485" font-size="14px" fill="#334155">クラウドCOEによる運用コスト削減</text>
+    
+    <rect x="640" y="410" width="260" height="95" rx="10" ry="10" fill="#2563EB" opacity="0.1" />
+    <text x="660" y="440" font-size="24px" font-weight="bold" fill="#2563EB">1.29億台</text>
+    <text x="660" y="465" font-size="14px" fill="#334155">任天堂Switch販売台数</text>
+    <text x="660" y="485" font-size="14px" fill="#334155">組織統合COEによる商品開発成功</text>
+  </g>
+  
+  <!-- 企業事例分析 -->
+  <rect x="50" y="450" width="900" height="380" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+  <text x="80" y="490" font-size="18px" font-weight="bold" fill="#1e40af">📊 企業事例分析</text>
+  <line x1="80" y1="500" x2="920" y2="500" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- 企業事例テーブル -->
+  <rect x="80" y="520" width="840" height="40" fill="#2563EB" opacity="0.1" />
+  <text x="100" y="545" font-size="14px" font-weight="bold" fill="#1e40af">企業</text>
+  <text x="220" y="545" font-size="14px" font-weight="bold" fill="#1e40af">COE類型</text>
+  <text x="380" y="545" font-size="14px" font-weight="bold" fill="#1e40af">主要施策</text>
+  <text x="670" y="545" font-size="14px" font-weight="bold" fill="#1e40af">成果</text>
+  
+  <!-- Netflix行 -->
+  <rect x="80" y="560" width="840" height="60" fill="#ffffff" />
+  <text x="100" y="585" font-size="14px" font-weight="bold" fill="#334155">Netflix</text>
+  <text x="100" y="605" font-size="12px" font-style="italic" fill="#475569">米国</text>
+  
+  <text x="220" y="590" font-size="14px" fill="#334155">データ駆動型</text>
+  <text x="220" y="610" font-size="12px" fill="#334155">コンテンツ戦略</text>
+  
+  <text x="380" y="580" font-size="14px" fill="#334155">• 全社データ分析基盤の構築</text>
+  <text x="380" y="600" font-size="14px" fill="#334155">• 高度な推奨エンジン開発</text>
+  <text x="380" y="620" font-size="14px" fill="#334155">• 各部門へのデータ専門家配置</text>
+  
+  <rect x="670" y="575" width="70" height="24" rx="12" ry="12" fill="#10b981" opacity="0.2" />
+  <text x="680" y="592" font-size="13px" fill="#10b981">2.82億人</text>
+  <text x="750" y="592" font-size="14px" fill="#334155">有料会員数</text>
+  <text x="670" y="616" font-size="14px" fill="#334155">視聴行動の約80%がレコメンド経由</text>
+  
+  <!-- ディズニー行 -->
+  <rect x="80" y="620" width="840" height="60" fill="#f8fafc" />
+  <text x="100" y="645" font-size="14px" font-weight="bold" fill="#334155">ディズニー</text>
+  <text x="100" y="665" font-size="12px" font-style="italic" fill="#475569">米国</text>
+  
+  <text x="220" y="650" font-size="14px" fill="#334155">顧客体験</text>
+  <text x="220" y="670" font-size="12px" fill="#334155">イノベーション</text>
+  
+  <text x="380" y="640" font-size="14px" fill="#334155">• 次世代体験プロジェクト設立</text>
+  <text x="380" y="660" font-size="14px" fill="#334155">• MyMagic+/MagicBand導入</text>
+  <text x="380" y="680" font-size="14px" fill="#334155">• 全社デジタル活用知見の波及</text>
+  
+  <rect x="670" y="635" width="70" height="24" rx="12" ry="12" fill="#10b981" opacity="0.2" />
+  <text x="680" y="652" font-size="13px" fill="#10b981">3,000人増</text>
+  <text x="750" y="652" font-size="14px" fill="#334155">パーク収容人数向上</text>
+  <text x="670" y="675" font-size="14px" fill="#334155">店舗利益率20%向上（ディズニーストア）</text>
+  
+  <!-- ソニー行 -->
+  <rect x="80" y="680" width="840" height="60" fill="#ffffff" />
+  <text x="100" y="705" font-size="14px" font-weight="bold" fill="#334155">ソニー</text>
+  <text x="100" y="725" font-size="12px" font-style="italic" fill="#475569">日本</text>
+  
+  <text x="220" y="710" font-size="14px" fill="#334155">クラウド＆AI</text>
+  <text x="220" y="730" font-size="12px" fill="#334155">活用COE</text>
+  
+  <text x="380" y="700" font-size="14px" fill="#334155">• クラウドCOE(CCoE)構築</text>
+  <text x="380" y="720" font-size="14px" fill="#334155">• Sony AI横断組織の設立</text>
+  <text x="380" y="740" font-size="14px" fill="#334155">• 基幹システムのクラウド移行</text>
+  
+  <rect x="670" y="695" width="70" height="24" rx="12" ry="12" fill="#10b981" opacity="0.2" />
+  <text x="680" y="712" font-size="13px" fill="#10b981">58%減</text>
+  <text x="750" y="712" font-size="14px" fill="#334155">運用コスト削減</text>
+  <text x="670" y="735" font-size="14px" fill="#334155">GT Sophyなど高度AI技術の開発・展開</text>
+  
+  <!-- 任天堂行 -->
+  <rect x="80" y="740" width="840" height="60" fill="#f8fafc" />
+  <text x="100" y="765" font-size="14px" font-weight="bold" fill="#334155">任天堂</text>
+  <text x="100" y="785" font-size="12px" font-style="italic" fill="#475569">日本</text>
+  
+  <text x="220" y="770" font-size="14px" fill="#334155">組織横断</text>
+  <text x="220" y="790" font-size="12px" fill="#334155">開発力強化</text>
+  
+  <text x="380" y="760" font-size="14px" fill="#334155">• 開発組織の統合再編</text>
+  <text x="380" y="780" font-size="14px" fill="#334155">• ハード・ソフト統合体制</text>
+  <text x="380" y="800" font-size="14px" fill="#334155">• 技術リソースの集中投下</text>
+  
+  <rect x="670" y="755" width="86" height="24" rx="12" ry="12" fill="#10b981" opacity="0.2" />
+  <text x="680" y="772" font-size="13px" fill="#10b981">1.29億台</text>
+  <text x="770" y="772" font-size="14px" fill="#334155">Switch販売台数</text>
+  <text x="670" y="795" font-size="14px" fill="#334155">前世代の約9.5倍の商業的成功</text>
+  
+  <!-- 右側エリア (40%) -->
+  <g>
+    <!-- COE定義と価値 -->
+    <rect x="980" y="180" width="570" height="180" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+    <text x="1010" y="220" font-size="18px" font-weight="bold" fill="#1e40af">💡 COEの定義と価値</text>
+    <line x1="1010" y1="230" x2="1520" y2="230" stroke="#e2e8f0" stroke-width="2" />
+    
+    <!-- COE定義ボックス -->
+    <rect x="1010" y="245" width="510" height="70" rx="8" ry="8" fill="#2563EB" opacity="0.05" stroke="#2563EB" stroke-width="1" />
+    <text x="1030" y="275" font-size="14px" fill="#334155">
+      <tspan font-weight="bold">Center of Excellence (COE)：</tspan>
+      <tspan>特定の領域における専門知識やベスト</tspan>
+    </text>
+    <text x="1030" y="295" font-size="14px" fill="#334155">プラクティスを組織内で集約・展開する中枢チーム</text>
+    
+    <!-- COE価値項目 -->
+    <g>
+      <rect x="1010" y="325" width="250" height="24" rx="4" ry="4" fill="#10b981" opacity="0.1" />
+      <text x="1020" y="342" font-size="14px" fill="#334155">✓ 全社的な業務効率化・標準化</text>
+      
+      <rect x="1270" y="325" width="250" height="24" rx="4" ry="4" fill="#f59e0b" opacity="0.1" />
+      <text x="1280" y="342" font-size="14px" fill="#334155">✓ イノベーション推進・技術導入</text>
+      
+      <rect x="1010" y="355" width="250" height="24" rx="4" ry="4" fill="#ef4444" opacity="0.1" />
+      <text x="1020" y="372" font-size="14px" fill="#334155">✓ 部門間ナレッジ共有の促進</text>
+      
+      <rect x="1270" y="355" width="250" height="24" rx="4" ry="4" fill="#10b981" opacity="0.1" />
+      <text x="1280" y="372" font-size="14px" fill="#334155">✓ 競争力強化・収益向上</text>
+    </g>
+  </g>
+  
+  <!-- エンタメ業界でのCOE必要性 -->
+  <rect x="980" y="380" width="570" height="180" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+  <text x="1010" y="420" font-size="18px" font-weight="bold" fill="#1e40af">🎮 エンタメ業界でのCOE必要性</text>
+  <line x1="1010" y1="430" x2="1520" y2="430" stroke="#e2e8f0" stroke-width="2" />
+  
+  <g>
+    <rect x="1030" y="445" width="25" height="25" rx="12.5" ry="12.5" fill="#ef4444" opacity="0.2" />
+    <text x="1040" y="463" font-size="16px" font-weight="bold" fill="#ef4444">1</text>
+    <text x="1065" y="463" font-size="14px" fill="#334155"><tspan font-weight="bold">コンテンツ開発の不確実性と高コスト</tspan>：データ分析COEによる科学的意思決定</text>
+    
+    <rect x="1030" y="480" width="25" height="25" rx="12.5" ry="12.5" fill="#f59e0b" opacity="0.2" />
+    <text x="1040" y="498" font-size="16px" font-weight="bold" fill="#f59e0b">2</text>
+    <text x="1065" y="498" font-size="14px" fill="#334155"><tspan font-weight="bold">組織のサイロ化</tspan>：COEによる部門横断的な知識共有とシナジー創出</text>
+    
+    <rect x="1030" y="515" width="25" height="25" rx="12.5" ry="12.5" fill="#10b981" opacity="0.2" />
+    <text x="1040" y="533" font-size="16px" font-weight="bold" fill="#10b981">3</text>
+    <text x="1065" y="533" font-size="14px" fill="#334155"><tspan font-weight="bold">顧客体験の重要性</tspan>：顧客体験向上のCOEによる一貫した高品質体験の提供</text>
+  </g>
+  
+  <!-- デジタル活用とCOE -->
+  <rect x="980" y="580" width="570" height="250" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+  <text x="1010" y="620" font-size="18px" font-weight="bold" fill="#1e40af">💻 デジタル活用とCOEの関係</text>
+  <line x1="1010" y1="630" x2="1520" y2="630" stroke="#e2e8f0" stroke-width="2" />
+  
+  <!-- タイムラインチャート -->
+  <line x1="1050" y1="650" x2="1050" y2="790" stroke="#2563EB" stroke-width="3" />
+  
+  <!-- AI・データ分析 -->
+  <circle cx="1050" cy="670" r="10" fill="#2563EB" />
+  <line x1="1060" y1="670" x2="1090" y2="670" stroke="#2563EB" stroke-width="2" />
+  <rect x="1090" y="650" width="430" height="60" rx="8" ry="8" fill="#2563EB" opacity="0.05" />
+  <text x="1110" y="675" font-size="15px" font-weight="bold" fill="#2563EB">AI・データ分析の活用</text>
+  <text x="1110" y="695" font-size="13px" fill="#334155">Netflix: 推奨エンジンで年間10億ドルのROI</text>
+  
+  <!-- クラウドプラットフォーム -->
+  <circle cx="1050" cy="730" r="10" fill="#2563EB" />
+  <line x1="1060" y1="730" x2="1090" y2="730" stroke="#2563EB" stroke-width="2" />
+  <rect x="1090" y="710" width="430" height="60" rx="8" ry="8" fill="#2563EB" opacity="0.05" />
+  <text x="1110" y="735" font-size="15px" font-weight="bold" fill="#2563EB">クラウドプラットフォームの活用</text>
+  <text x="1110" y="755" font-size="13px" fill="#334155">Netflix: 10万台以上のサーバで125百万時間/日の視聴需要対応</text>
+  
+  <!-- 今後の展望 -->
+  <rect x="980" y="700" width="570" height="130" rx="12" ry="12" fill="white" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+  <text x="1010" y="740" font-size="18px" font-weight="bold" fill="#1e40af">🔮 今後の展望</text>
+  <line x1="1010" y1="750" x2="1520" y2="750" stroke="#e2e8f0" stroke-width="2" />
+  
+  <g>
+    <rect x="1010" y="765" width="270" height="50" rx="8" ry="8" fill="#2563EB" opacity="0.05" />
+    <text x="1030" y="790" font-size="14px" font-weight="bold" fill="#2563EB">適用領域の拡大</text>
+    <text x="1030" y="805" font-size="13px" fill="#334155">クリエイティブ領域のCOE構築</text>
+    
+    <rect x="1290" y="765" width="250" height="50" rx="8" ry="8" fill="#2563EB" opacity="0.05" />
+    <text x="1310" y="790" font-size="14px" font-weight="bold" fill="#2563EB">外部連携の強化</text>
+    <text x="1310" y="805" font-size="13px" fill="#334155">産学連携型COEの推進</text>
+  </g>
+  
+  <!-- 結論 -->
+  <rect x="825" y="830" width="725" height="50" rx="8" ry="8" fill="#2563EB" opacity="0.1" stroke="#2563EB" stroke-width="1" />
+  <text x="845" y="860" font-size="16px" fill="#1e40af" font-weight="bold">結論：「専門知の集約」と「全社への波及」がCOE成功の鍵。日本企業もクリエイティビティに加え、データ活用・テクノロジーを取り入れた戦略的COEの構築が求められる</text>
+  
+  <!-- フッター -->
+  <line x1="50" y1="850" x2="1550" y2="850" stroke="#e2e8f0" stroke-width="1" />
+  <text x="50" y="880" font-size="12px" fill="#475569">エンタメ企業COE成功事例分析 | 2025年2月</text>
+  <text x="1550" y="880" font-size="12px" fill="#475569" text-anchor="end">1</text>
+  
+  <!-- グラデーション定義 -->
+  <defs>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+  </defs>
+</svg>

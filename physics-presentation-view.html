@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/presentation.css">
+</head>
+<body class="bg-gray-50 text-gray-700 font-sans">
+  <div class="presentation-container">
+    <!-- ヘッダー -->
+    <header class="flex justify-between items-center px-8 py-4 border-b border-gray-200 bg-white">
+      <div>
+        <h1 class="text-3xl font-bold gradient-text"><%= title %></h1>
+        <p class="text-base text-gray-600"><%= subtitle %></p>
+      </div>
+      <div class="flex items-center gap-4 text-sm text-gray-500">
+        <div class="flex items-center gap-1">
+          <i data-feather="calendar" class="w-4 h-4"></i>
+          <span><%= date %></span>
+        </div>
+        <div class="flex items-center gap-1">
+          <i data-feather="file-text" class="w-4 h-4"></i>
+          <span><%= source %></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="flex flex-1 overflow-hidden">
+      <!-- 左カラム (60%) -->
+      <div class="w-3/5 p-6 overflow-auto">
+        <!-- エグゼクティブサマリー -->
+        <div class="card p-6 mb-6">
+          <h2 class="section-title">
+            <i data-feather="shield" class="w-5 h-5"></i>
+            エグゼクティブサマリー
+          </h2>
+          <p class="text-sm text-gray-700 mb-4 leading-relaxed">
+            物理現象の数学的記述は単なる学術的関心を超え、<span class="text-blue-600 font-medium">産業イノベーションとビジネス競争力</span>に直結している。
+            本レポートでは5つの異なる複雑さを持つ現象を分析し、それらがもたらす潜在的なビジネスチャンスと工学的応用を検討する。
+          </p>
+          
+          <!-- KPI指標 -->
+          <div class="grid grid-cols-5 gap-3 mt-4">
+            <% kpiData.forEach(function(kpi) { %>
+              <div class="bg-gray-50 rounded-lg p-3 text-center">
+                <div class="text-xl font-bold text-blue-700"><%= kpi.value %></div>
+                <div class="text-xs text-gray-500"><%= kpi.label %></div>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+
+        <!-- 現象比較表 -->
+        <div class="card p-6 mb-6">
+          <h2 class="section-title">
+            <i data-feather="alert-triangle" class="w-5 h-5"></i>
+            複雑性と応用可能性の比較
+          </h2>
+          
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-200">
+                  <th class="text-left py-2 px-3 font-medium text-gray-500">指標</th>
+                  <th class="text-center py-2 px-3 font-medium text-gray-500">重力加速度</th>
+                  <th class="text-center py-2 px-3 font-medium text-gray-500">タイヤ抵抗</th>
+                  <th class="text-center py-2 px-3 font-medium text-gray-500">シャボン玉</th>
+                  <th class="text-center py-2 px-3 font-medium text-gray-500">葉の落下</th>
+                  <th class="text-center py-2 px-3 font-medium text-gray-500">背面飛行</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% comparisonData.forEach(function(row) { %>
+                  <tr class="border-b border-gray-100">
+                    <td class="py-2 px-3 font-medium"><%= row.property %></td>
+                    <td class="py-2 px-3 text-center"><%= row.gravity %></td>
+                    <td class="py-2 px-3 text-center"><%= row.bicycle %></td>
+                    <td class="py-2 px-3 text-center"><%= row.bubble %></td>
+                    <td class="py-2 px-3 text-center"><%= row.leaf %></td>
+                    <td class="py-2 px-3 text-center"><%= row.plane %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- タイムライン分析 -->
+        <div class="card p-6">
+          <h2 class="section-title">
+            <i data-feather="clock" class="w-5 h-5"></i>
+            応用開発の市場展開予測
+          </h2>
+          
+          <div class="relative mt-6">
+            <!-- タイムライン -->
+            <div class="timeline-line"></div>
+            
+            <% timelineData.forEach(function(item, index) { %>
+              <div class="relative pl-8 pb-5 <%= index === timelineData.length - 1 ? '' : '' %>">
+                <div class="timeline-dot bg-blue-<%= 500 - index * 100 %>"></div>
+                <div class="font-semibold text-blue-700"><%= item.period %></div>
+                <p class="text-sm text-gray-600"><%= item.description %></p>
+              </div>
+            <% }); %>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右カラム (40%) -->
+      <div class="w-2/5 bg-gray-100 p-6 overflow-auto">
+        <!-- 各物理現象の解説カード -->
+        <% physicsData.forEach(function(item) { %>
+          <div class="card mb-5 overflow-hidden">
+            <div class="flex justify-between items-center p-4 border-b border-gray-100">
+              <div class="flex items-center gap-2">
+                <i data-feather="<%= item.icon %>" class="w-5 h-5 text-blue-700"></i>
+                <h3 class="text-lg font-semibold text-blue-800"><%= item.title %></h3>
+              </div>
+              <div class="risk-<%= item.riskColor %> text-white text-xs px-2 py-1 rounded-full">
+                複雑性: <%= item.riskLevel %>
+              </div>
+            </div>
+            
+            <div class="p-4">
+              <div class="bg-gray-50 text-center p-3 rounded-lg mb-3">
+                <div class="text-base font-mono text-blue-700"><%= item.formula %></div>
+              </div>
+              
+              <ul class="text-sm text-gray-700 space-y-2">
+                <% item.points.forEach(function(point) { %>
+                  <li class="flex items-start gap-2">
+                    <div class="min-w-4 mt-0.5">
+                      <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                    </div>
+                    <div><%= point %></div>
+                  </li>
+                <% }); %>
+              </ul>
+              
+              <div class="mt-3 bg-blue-50 border border-blue-100 p-3 rounded-lg">
+                <div class="text-xs font-semibold text-blue-700">潜在的応用分野:</div>
+                <div class="text-xs text-gray-600 mt-1">
+                  <%= item.application %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </main>
+
+    <!-- フッター -->
+    <footer class="flex justify-between items-center px-8 py-3 bg-white border-t border-gray-200 text-xs text-gray-500">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 bg-blue-700 rounded-md flex items-center justify-center text-white font-bold">P</div>
+        <span>Physical Sciences Advanced Research Group</span>
+      </div>
+      <div>
+        <span>出典: 物理現象の専門的分析 | ID: PSC-2025-03-22</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+  <script>
+    // Featherアイコンの初期化
+    document.addEventListener('DOMContentLoaded', () => {
+      feather.replace();
+    });
+  </script>
+</body>
+</html>
